@@ -42,9 +42,9 @@ clearvars; close all; clc
 addpath('visualization');
 global xlsx_folder % Make global to send to uiputfile() in createExperiment()
 
-%% Flip wells along x-axis if mounting optoPlate upside-down on microscope
-flip_horizontal = true;
-wait_for_serial = true;
+%% SETTINGS
+flip_horizontal = false; % Flip wells along x-axis (if mounting optoPlate upside-down on microscope)
+wait_for_serial = false; % Wait for signal to start optoPlate clock (if communicating with microscope computer)
 
 %% Load xlsx file with optoPlate configuration
 [file, xlsx_folder] =  uigetfile('.xlsx','Select plate map','MultiSelect','on');
